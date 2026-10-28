@@ -1,0 +1,41 @@
+name: wan27
+version: '0.1.0'
+summary: Wan 2.7 AI video and image generator CLI (wan2-7.io)
+description: |
+  Official CLI for Wan 2.7 AI (https://wan2-7.io/), the AI video and image
+  generation platform with full Model Context Protocol (MCP) support.
+  Generate 1080p/2K text-to-video, image-to-video, and AI images or estimate
+  credit costs right from your Linux terminal.
+
+    wan27 -credits
+    wan27 -estimate "A cinematic aerial shot over neon Tokyo at dusk"
+    wan27 -model wan2.7-t2v -resolution 1080p "Ocean waves crashing on basalt cliffs"
+    wan27 -model wan2.7-i2v -image https://example.com/frame.png "Slow camera dolly in"
+    wan27 -model wan2.7-image-pro -aspect-ratio 1:1 "Studio product portrait"
+
+  Set WAN27_API_TOKEN from https://wan2-7.io/mcp/guide/.
+  Documentation:
+  - Website: https://wan2-7.io/
+  - MCP Server: https://wan2-7.io/mcp/
+  - MCP Setup Guide: https://wan2-7.io/mcp/guide/
+  - CLI Reference: https://wan2-7.io/cli/
+  - Pricing & Credits: https://wan2-7.io/pricing/
+architectures: [ARCH]
+base: core22
+confinement: strict
+grade: stable
+license: MIT
+title: Wan 2.7 AI Video & Image Generator CLI
+links:
+  website:
+    - https://wan2-7.io/
+  source-code:
+    - https://github.com/NotUsingGithub/wan27-snap
+  issues:
+    - https://github.com/NotUsingGithub/wan27-snap/issues
+  contact:
+    - mailto:hello@wan2-7.io
+apps:
+  wan27:
+    command: bin/wan27
+    plugs: [network]

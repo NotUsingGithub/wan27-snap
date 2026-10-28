@@ -1,0 +1,28 @@
+name: wan27
+base: core22
+version: '0.1.0'
+summary: Wan 2.7 AI video and image generator CLI (wan2-7.io)
+description: |
+  Official CLI for Wan 2.7 AI (https://wan2-7.io/), the AI video and image
+  generation platform with Model Context Protocol (MCP) integration.
+  See https://wan2-7.io/cli/, https://wan2-7.io/mcp/, and https://wan2-7.io/pricing/.
+website: https://wan2-7.io/
+source-code: https://github.com/NotUsingGithub/wan27-snap
+issues: https://github.com/NotUsingGithub/wan27-snap/issues
+contact: mailto:hello@wan2-7.io
+license: MIT
+grade: stable
+confinement: strict
+
+apps:
+  wan27:
+    command: bin/wan27
+    plugs:
+      - network
+
+parts:
+  wan27:
+    plugin: go
+    source: .
+    build-snaps:
+      - go/latest/stable
